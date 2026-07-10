@@ -52,7 +52,7 @@ if (DEBUG) {
 const result = await Promise.allSettled([
   emit('app/src/main.ts', 'public/main.bundle.js'),
 
-  emit('app/src/webview.ts', 'public/webview.js'),
+  Deno.copyFile('app/src/webview.ts', 'public/webview.ts'),
 
   emit('client/src/script.ts', 'public/script.bundle.js'),
 
