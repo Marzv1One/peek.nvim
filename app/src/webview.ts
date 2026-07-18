@@ -1,7 +1,7 @@
 import { Webview } from 'https://deno.land/x/webview@0.9.0/mod.ts';
 import { parseArgs } from 'https://deno.land/std@0.217.0/cli/parse_args.ts';
 
-const { url, theme, serverUrl } = parseArgs(Deno.args);
+const { url, theme, style, serverUrl } = parseArgs(Deno.args);
 
 const webview = new Webview();
 
@@ -10,6 +10,7 @@ webview.bind('_log', console.log);
 webview.init(`
   window.peek = {};
   window.peek.theme = "${theme}"
+  window.peek.style = "${style}"
   window.peek.serverUrl = "${serverUrl}"
 `);
 

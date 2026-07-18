@@ -89,6 +89,7 @@ async function init(socket: WebSocket) {
           'webview.ts',
           `--url=${new URL('index.html', Deno.mainModule).href}`,
           `--theme=${__args['theme']}`,
+          `--style=${__args['style'] || ''}`,
           `--serverUrl=${serverUrl}`,
         ],
         stdin: 'null',
@@ -128,6 +129,7 @@ async function init(socket: WebSocket) {
     logger.info(`listening on ${serverUrl}`);
     const url = new URL(`http://${serverUrl}`);
     const searchParams = new URLSearchParams({ theme: __args.theme });
+    if (__args.style) searchParams.set('style', __args.style);
     url.search = searchParams.toString();
 
     open(url.href, { app: app !== 'browser' && app })

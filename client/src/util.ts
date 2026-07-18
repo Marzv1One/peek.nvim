@@ -12,6 +12,7 @@ export function findLast<T>(array: Array<T> | undefined, predicate: (item: T) =>
 
 interface Config {
   theme?: string;
+  style?: string;
   serverUrl?: string;
   ctx?: string;
 }

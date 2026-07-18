@@ -52,6 +52,7 @@ addEventListener('DOMContentLoaded', () => {
   };
 
   if (peek.theme) body.setAttribute('data-theme', peek.theme);
+  if (peek.style) body.setAttribute('data-style', peek.style);
   if (peek.ctx === 'webview') zoom.init();
 
   document.addEventListener('keydown', (event: KeyboardEvent) => {

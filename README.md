@@ -45,6 +45,7 @@ require('peek').setup({
   syntax = true,            -- enable syntax highlighting, affects performance
 
   theme = 'dark',           -- 'dark' or 'light'
+  style = nil,
 
   update_on_change = true,
 
@@ -60,6 +61,8 @@ require('peek').setup({
                             -- that has to pass before starting new render
 })
 ```
+
+Set `style` to `'rose-pine'` or `'rose-pine-dawn'` to use a Rose Pine preview theme. Leave it unset to keep the default GitHub Markdown theme.
 
 ### :paperclip: `app` option
 

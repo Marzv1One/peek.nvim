@@ -33,6 +33,10 @@ function module.setup()
     '--app=' .. vim.json.encode(config.get('app')),
   }
 
+  if config.get('style') then
+    table.insert(args, '--style=' .. config.get('style'))
+  end
+
   if config.get('syntax') then
     table.insert(args, '--syntax')
   end
